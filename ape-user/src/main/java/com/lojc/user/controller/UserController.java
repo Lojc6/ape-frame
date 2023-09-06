@@ -1,5 +1,6 @@
 package com.lojc.user.controller;
 
+import com.lojc.bean.Result;
 import com.lojc.user.entity.dto.UserDto;
 import com.lojc.user.entity.req.UserReq;
 import com.lojc.user.service.UserService;
@@ -18,12 +19,11 @@ public class UserController {
     @Autowired
     private UserService userService;
     @PostMapping("/testInsert")
-    public Integer addUser(@RequestBody UserReq userReq){
+    public Result addUser(@RequestBody UserReq userReq){
 
         UserDto userDto=new UserDto();
         BeanUtils.copyProperties(userReq,userDto);
-        int i = userService.addUser(userDto);
-
-        return  i;
+        int i=1/0;
+        return Result.OK(userService.addUser(userDto));
     }
 }

@@ -1,0 +1,4 @@
+com\lojc\common\ExceptionAdaptController.class
+com\lojc\bean\ResultMessage.class
+com\lojc\bean\Result.class
+com\lojc\bean\ResultCode.class
