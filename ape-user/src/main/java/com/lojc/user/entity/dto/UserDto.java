@@ -1,8 +1,6 @@
-package com.Lojc.entity.dto;
+package com.lojc.user.entity.dto;
 
 import lombok.Data;
-
-import java.util.Date;
 
 /*
  *@Auther Lojc

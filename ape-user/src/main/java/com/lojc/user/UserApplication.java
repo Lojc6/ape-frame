@@ -1,4 +1,4 @@
-package com.Lojc;
+package com.lojc.user;
 
 /*
  *@Auther Lojc
@@ -10,8 +10,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication
-@MapperScan(value = "com.Lojc.mapper")
+@SpringBootApplication(scanBasePackages = "com.lojc")
+@MapperScan(value = "com.lojc.*.mapper")
+@ComponentScan(value = "com.lojc")
+
 public class UserApplication {
     public static void main(String[] args) {
         SpringApplication.run(UserApplication.class);

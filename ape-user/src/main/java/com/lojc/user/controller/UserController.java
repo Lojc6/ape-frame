@@ -1,8 +1,8 @@
-package com.Lojc.controller;
+package com.lojc.user.controller;
 
-import com.Lojc.entity.dto.UserDto;
-import com.Lojc.entity.req.UserReq;
-import com.Lojc.service.UserService;
+import com.lojc.user.entity.dto.UserDto;
+import com.lojc.user.entity.req.UserReq;
+import com.lojc.user.service.UserService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
