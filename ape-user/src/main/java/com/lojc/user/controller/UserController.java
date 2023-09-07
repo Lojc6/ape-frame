@@ -2,6 +2,7 @@ package com.lojc.user.controller;
 
 import com.lojc.bean.Result;
 import com.lojc.user.entity.dto.UserDto;
+import com.lojc.user.entity.req.UserListReq;
 import com.lojc.user.entity.req.UserReq;
 import com.lojc.user.service.UserService;
 import org.springframework.beans.BeanUtils;
@@ -23,7 +24,21 @@ public class UserController {
 
         UserDto userDto=new UserDto();
         BeanUtils.copyProperties(userReq,userDto);
-        int i=1/0;
         return Result.OK(userService.addUser(userDto));
     }
+
+    @DeleteMapping("/{id}")
+    public Result delete(@PathVariable Integer id){
+        return Result.OK(userService.delete(id));
+    }
+
+    @GetMapping("/getPage")
+    public Result getUserPage(@RequestBody UserListReq userListReq){
+
+        UserDto userDto=new UserDto();
+        BeanUtils.copyProperties(userListReq,userDto);
+        return Result.OK(userService.getUserPage(userDto));
+
+    }
+
 }

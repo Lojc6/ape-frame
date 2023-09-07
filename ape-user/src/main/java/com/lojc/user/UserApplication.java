@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication(scanBasePackages = "com.lojc")
-@MapperScan(value = "com.lojc.*.mapper")
+@MapperScan(value = {"com.lojc.*.mapper","com.lojc.*.dao"})
 @ComponentScan(value = "com.lojc")
 
 public class UserApplication {

@@ -13,11 +13,11 @@ import java.util.Date;
  */
 @TableName("user")
 @Data
-public class UserReq {
+public class UserListReq {
 
+    private Integer pageIndex;
 
-    private String name;
+    private Integer pageSize;
 
-    private Integer age;
 
 }

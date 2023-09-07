@@ -25,3 +25,13 @@ spring:
         wall:
           enabled: true
 
+sql:
+  beauty:
+    show: true
+
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: delete_flag       #逻辑删除字段（不是物理删除） 要在实体类的字段加上TableLogic注解
+      logic-delete-value: 1
+      logic-not-delete-value: 0

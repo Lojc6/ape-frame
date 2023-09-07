@@ -1,26 +1,28 @@
-package com.lojc.entity;
+package com.lojc.user.entity.po;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import lombok.Data;
 
-import java.io.Serializable;
 import java.util.Date;
+import java.io.Serializable;
 
-/*
- *@Auther Lojc
- *@Date 2023/9/6
+/**
+ * (SysUser)实体类
+ *
+ * @author makejava
+ * @since 2023-09-07 14:48:03
  */
-
-
-
-/*
-* 就是数据库规范,把公共字段抽取出来。在做业务的时候,创建出来的实例类要继承这个公共
-* 的字段类。
-* */
 @Data
-public class BaseEntity  implements Serializable{
+public class SysUser implements Serializable {
+    private static final long serialVersionUID = -10344142399716186L;
+
+    private Long id;
+
+    private String name;
+
+    private Integer age;
 
     @TableField(value = "create_by", fill = FieldFill.INSERT)
     private String createBy;
@@ -42,3 +44,4 @@ public class BaseEntity  implements Serializable{
     private Integer version;
 
 }
+

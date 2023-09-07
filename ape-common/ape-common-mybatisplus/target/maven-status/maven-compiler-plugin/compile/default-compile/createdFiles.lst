@@ -1,1 +1,5 @@
+com\lojc\entity\PageResult.class
 com\lojc\handler\MyMetaObjectHandler.class
+com\lojc\inteceptor\SqlBeautyInterceptor.class
+com\lojc\config\MybatisConfiguration.class
+com\lojc\entity\BaseEntity.class
