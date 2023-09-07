@@ -25,7 +25,6 @@ import java.util.List;
 public class SysUserServiceImpl implements SysUserService {
 
 
-
     @Autowired
     private SysUserDao sysUserDao;
 
@@ -52,11 +51,11 @@ public class SysUserServiceImpl implements SysUserService {
 //        BeanUtils.copyProperties(sysUserReq,sysUser)    更换为以下mapstruct的方式
         SysUser sysUser = SysUserConverter.INSTANCE.convertReqToSysUser(sysUserReq);
 
-        PageResponse<SysUser> pageResponse=new PageResponse<>();
+        PageResponse<SysUser> pageResponse = new PageResponse<>();
         pageResponse.setCurrent(sysUserReq.getPageNo());
         pageResponse.setPageSize(sysUserReq.getPageSize());
-        Long pageStart=(sysUserReq.getPageNo()-1)*sysUserReq.getPageSize();
-        Long total=this.sysUserDao.count(sysUser);
+        Long pageStart = (sysUserReq.getPageNo() - 1) * sysUserReq.getPageSize();
+        Long total = this.sysUserDao.count(sysUser);
         System.out.println(total);
         List<SysUser> sysUserList = this.sysUserDao.queryAllByLimit(sysUser, pageStart, sysUserReq.getPageSize());
         System.out.println(sysUserList);

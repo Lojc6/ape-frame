@@ -5,6 +5,8 @@ import com.lojc.bean.Result;
 import com.lojc.user.entity.po.SysUser;
 import com.lojc.user.entity.req.SysUserReq;
 import com.lojc.user.service.SysUserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -17,6 +19,7 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("sysUser")
+@Api(tags = "用户接口")
 public class SysUserController {
     /**
      * 服务对象
@@ -26,9 +29,11 @@ public class SysUserController {
 
     /**
      * 分页查询
+     *
      * @return 查询结果
      */
     @GetMapping
+    @ApiOperation("查询页数")
     public Result<PageResponse<SysUser>> queryByPage(@RequestBody SysUserReq sysUserReq) {
         return Result.OK(this.sysUserService.queryByPage(sysUserReq));
     }
@@ -64,7 +69,13 @@ public class SysUserController {
      */
     @PutMapping
     public Result<SysUser> edit(@RequestBody SysUser sysUser) {
-        return Result.OK(this.sysUserService.update(sysUser));
+
+        SysUser update = this.sysUserService.update(sysUser);
+        if (update == null) {
+            return Result.Error();
+        }
+
+        return Result.OK(update);
     }
 
     /**

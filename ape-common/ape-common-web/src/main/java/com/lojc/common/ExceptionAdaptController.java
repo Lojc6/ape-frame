@@ -1,6 +1,8 @@
 package com.lojc.common;
 
 import com.lojc.bean.Result;
+
+
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
@@ -17,7 +19,7 @@ public class ExceptionAdaptController {
         return Result.Error();
     }
 
-    @ExceptionHandler(Exception.class)
+//    @ExceptionHandler(Exception.class)
     public Result exception(Exception exception){
         exception.printStackTrace();
         return Result.Error();
