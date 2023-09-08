@@ -1,0 +1,14 @@
+要使用Redis预热缓存,创建一个类继承AbstractCache类
+
+{
+并载入RedisTemplate
+@Autowired
+    private RedisTemplate redisTemplate;
+   //与数据库进行交互
+
+}
+
+ 最后：  并开启yml配置
+  init:
+    cache:
+      reload/init: true
